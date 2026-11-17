@@ -1,0 +1,49 @@
+{
+  "name": "joinforme",
+  "version": "1.0.0",
+  "description": "Send a bot into your Google Meet, Zoom or Microsoft Teams call to take notes, go instead of you, or sit in with you, and get the transcript back in your chat.",
+  "author": {
+    "name": "Pattern AI Labs",
+    "email": "info@pattern-ai.com",
+    "url": "https://joinfor.me"
+  },
+  "homepage": "https://joinfor.me",
+  "repository": "https://github.com/pattern-ai-labs/joinforme",
+  "license": "MIT",
+  "keywords": [
+    "meetings",
+    "meeting-bot",
+    "google-meet",
+    "zoom",
+    "microsoft-teams",
+    "meeting-notes",
+    "transcription",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "joinfor.me",
+    "shortDescription": "Send a bot to your meetings",
+    "longDescription": "joinfor.me sends a bot into your Google Meet, Zoom or Microsoft Teams call. It can take notes, go instead of you and give your update, or sit in with you and answer from a brief. While the meeting runs you can check what is happening, have the bot say something, answer a question it passed on, or post in the chat. Afterwards you get the full transcript and can write the summary and follow-ups. The bot never agrees to deadlines, money or decisions for you, leaves when asked, and only you can send it. Free during the beta.",
+    "developerName": "Pattern AI Labs",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://joinfor.me",
+    "supportURL": "mailto:info@pattern-ai.com",
+    "privacyPolicyURL": "https://joinfor.me/privacy",
+    "termsOfServiceURL": "https://joinfor.me/terms",
+    "defaultPrompt": [
+      "Take notes in my 3 pm call: https://meet.google.com/abc-defg-hij",
+      "Go to standup for me and say the API is done",
+      "What was decided in my last meeting?"
+    ],
+    "brandColor": "#FF9933",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "joinforme",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Send a bot into your Google Meet, Zoom or Microsoft Teams call to take notes, go instead of you, or sit in with you, and get the transcript back in your chat.",
   "author": {
     "name": "Pattern AI Labs",

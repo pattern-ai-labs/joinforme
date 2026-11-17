@@ -1,0 +1,28 @@
+name: Platform request
+description: Ask for joinfor.me to work with another assistant, agent or plugin store
+labels: [platform]
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: Assistant or platform
+      placeholder: e.g. a chat app, personal agent, IDE or plugin directory
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: How can it connect to outside tools?
+      multiple: true
+      options:
+        - Custom remote MCP server
+        - Agent Skills (SKILL.md)
+        - Plugin or extension package
+        - OpenAPI / custom actions
+        - Plugin store or directory listing
+        - Not sure
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Links to the platform's docs on connectors, MCP or plugins help a lot.

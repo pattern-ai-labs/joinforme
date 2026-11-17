@@ -269,12 +269,50 @@ skill come in together. The plugin then works in Kimi Work and on Kimi web.
 **Kimi web**: plugins come from the official market. joinfor.me isn't listed there yet, so use a plugin
 created in Kimi Work.
 
+### Alibaba (Qwen)
+
+**Qwen Code**, with an API key:
+
+```bash
+qwen mcp add --transport http joinforme https://api.joinfor.me/mcp \
+  --header "Authorization: Bearer $JOINFORME_API_KEY"
+```
+
+Or in `~/.qwen/settings.json` (all projects) or `.qwen/settings.json` (one project):
+
+```json
+{"mcpServers": {"joinforme": {"httpUrl": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer <JOINFORME_API_KEY>"}}}}
+```
+
+Qwen Code can also sign in with OAuth: leave out the header, and it registers itself with joinfor.me and opens
+the sign-in page. For the skill, copy `skills/joinforme` to `~/.qwen/skills/` or `.qwen/skills/`.
+
+**QwenWork 千问办公** (desktop): 扩展 → 连接器 → **+ 添加**, and paste:
+
+```json
+{"mcpServers": {"joinforme": {"type": "streamable-http", "url": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer <JOINFORME_API_KEY>"}}}}
+```
+
+**Bailian 百炼 / Model Studio** (agents built on Alibaba Cloud): MCP management → create a custom MCP service,
+install method **http** (`streamableHttp`), URL `https://api.joinfor.me/mcp`, and add
+`Authorization: Bearer <JOINFORME_API_KEY>` to the service headers. Custom services are private to your
+account.
+
+**Tongyi Lingma 通义灵码**: its manual setup supports STDIO and SSE only. Use a STDIO bridge:
+
+```json
+{"mcpServers": {"joinforme": {"command": "npx",
+  "args": ["-y", "mcp-remote", "https://api.joinfor.me/mcp", "--header", "Authorization: Bearer <JOINFORME_API_KEY>"]}}}
+```
+
+**Qwen app 千问** (chat): no custom MCP servers yet. Use QwenWork or Qwen Code.
+
 ### Quick reference (other vendors)
 
 | Product | How |
 |---|---|
-| **Qwen Code** | `~/.qwen/settings.json`: `{"mcpServers": {"joinforme": {"httpUrl": "https://api.joinfor.me/mcp"}}}` |
-| **Qwen Chat** | No custom MCP servers yet. |
 | **DeepSeek Harness** | Add `https://api.joinfor.me/mcp` through its MCP client plugin. |
 | **DeepSeek (chat app)** | No custom MCP servers yet. |
 

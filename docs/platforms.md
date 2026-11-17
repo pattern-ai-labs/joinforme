@@ -309,12 +309,52 @@ account.
 
 **Qwen app 千问** (chat): no custom MCP servers yet. Use QwenWork or Qwen Code.
 
-### Quick reference (other vendors)
+### DeepSeek
 
-| Product | How |
-|---|---|
-| **DeepSeek Harness** | Add `https://api.joinfor.me/mcp` through its MCP client plugin. |
-| **DeepSeek (chat app)** | No custom MCP servers yet. |
+**DeepSeek Harness** (`dsh`): add an MCP client entry to your profile's `cordis.patch.yml`:
+
+```yaml
+- id: mcp-joinforme
+  name: '@deepseek-ai/dsh-mcp-client'
+  config:
+    serverName: joinforme
+    transport: streamable-http
+    url: https://api.joinfor.me/mcp
+    headers:
+      Authorization: !!js '`Bearer ${process.env.JOINFORME_API_KEY}`'
+```
+
+To use OAuth instead, drop `headers` and set `oauth.credentialKey` without a `clientId`. Harness then registers
+itself with joinfor.me, and you sign in through `dsh-mcp-manager`. Skills: copy `skills/joinforme` to
+`~/.dsh/skills/` or `~/.agents/skills/`.
+
+**DeepSeek app** (chat): no custom MCP servers yet.
+
+### Zhipu (GLM)
+
+**ZCode** (GLM desktop client): Settings → MCP Servers → **New** → type **HTTP**, URL
+`https://api.joinfor.me/mcp`. Click **Open authorization** to sign in with OAuth, or add the header
+`Authorization: Bearer <JOINFORME_API_KEY>`.
+
+**Z.ai API** (GLM models): pass joinfor.me as an MCP tool:
+
+```json
+{"type": "mcp", "mcp": {"server_label": "joinforme", "server_url": "https://api.joinfor.me/mcp",
+  "transport_type": "streamable-http", "headers": {"Authorization": "Bearer <JOINFORME_API_KEY>"}}}
+```
+
+**智谱清言 / Z.ai chat, AutoGLM**: no custom MCP servers yet.
+
+### MiniMax
+
+**MiniMax Code**: `~/.minimax/mcp.json`:
+
+```json
+{"mcpServers": {"joinforme": {"type": "streamable-http", "url": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer ${JOINFORME_API_KEY}"}, "enabled": true}}}
+```
+
+**MiniMax Agent** (web): no custom MCP servers yet.
 
 Agents built on these models (for example with Qwen-Agent or another framework) can use the MCP server or
 the HTTPS API directly.

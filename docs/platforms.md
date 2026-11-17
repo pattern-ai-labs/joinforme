@@ -356,6 +356,40 @@ itself with joinfor.me, and you sign in through `dsh-mcp-manager`. Skills: copy 
 
 **MiniMax Agent** (web): no custom MCP servers yet.
 
+### Tencent
+
+**CodeBuddy**:
+
+```bash
+codebuddy mcp add --scope user --transport http joinforme https://api.joinfor.me/mcp \
+  --header "Authorization: Bearer $JOINFORME_API_KEY"
+```
+
+Or in `~/.codebuddy/.mcp.json` (or `.mcp.json` in a project):
+
+```json
+{"mcpServers": {"joinforme": {"type": "http", "url": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer ${JOINFORME_API_KEY}"}}}}
+```
+
+Skills: copy `skills/joinforme` to `~/.codebuddy/skills/` or `.codebuddy/skills/`.
+
+**WorkBuddy** (desktop): add a **自定义连接器** (custom connector) with the same MCP configuration as CodeBuddy.
+
+**Tencent Cloud ADP 智能体开发平台** (agent platform): add a custom connector, type **streamableHTTP**, URL
+`https://api.joinfor.me/mcp`, auth **API key** in the header `Authorization` with the value
+`Bearer <JOINFORME_API_KEY>`. ADP replaces Tencent Yuanqi 元器, which shut down on 9 November 2026.
+
+**Yuanbao 元宝** (chat): no custom MCP servers yet.
+
+### Baidu
+
+**Qianfan 千帆 (AppBuilder workflows)** *(partly documented)*: add an **MCP Server** node to the workflow,
+enter `https://api.joinfor.me/mcp` as the server address and your key under 鉴权 (auth), connect, then pick the
+joinfor.me tool the node should call. Baidu doesn't document the transport or auth format for this node yet.
+
+**Wenxiaoyan 文小言** (chat): no custom MCP servers yet.
+
 Agents built on these models (for example with Qwen-Agent or another framework) can use the MCP server or
 the HTTPS API directly.
 

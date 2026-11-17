@@ -17,7 +17,7 @@ documented the steps publicly yet, so we describe the general route.
 
 **Contents:**
 [Claude](#claude) · [ChatGPT and OpenAI](#chatgpt-and-openai) · [Grok and xAI](#grok-and-xai) ·
-[Google Gemini](#google-gemini) · [Microsoft Copilot](#microsoft-copilot) · [Perplexity](#perplexity) ·
+[Google Gemini](#google-gemini) · [GitHub Copilot](#github-copilot) · [Microsoft Copilot](#microsoft-copilot) · [Perplexity](#perplexity) ·
 [Mistral Le Chat](#mistral-le-chat) · [Personal agents](#personal-agents) · [Developer tools](#developer-tools) ·
 [Kimi, Qwen and DeepSeek](#kimi-qwen-and-deepseek) · [Any other agent](#any-other-agent)
 
@@ -125,6 +125,31 @@ Then run `/mcp auth joinforme` in a session. Or add it by hand to `~/.gemini/set
 {"mcpServers": {"joinforme": {"httpUrl": "https://api.joinfor.me/mcp"}}}
 ```
 
+## GitHub Copilot
+
+**Copilot CLI**, as a plugin (skill plus MCP server):
+
+```bash
+copilot plugin install pattern-ai-labs/joinforme
+```
+
+If the joinfor.me tools don't appear or you aren't asked to sign in, also add the server to
+`~/.copilot/mcp-config.json`:
+
+```json
+{"mcpServers": {"joinforme": {"type": "http", "url": "https://api.joinfor.me/mcp"}}}
+```
+
+**VS Code, Visual Studio, JetBrains (agent mode):** add the server to your `mcp.json` (in VS Code,
+`.vscode/mcp.json` or user settings; in JetBrains, Copilot Chat → Agent → tools icon → Add MCP Tools):
+
+```json
+{"servers": {"joinforme": {"type": "http", "url": "https://api.joinfor.me/mcp"}}}
+```
+
+Start the server and sign in when asked (in Visual Studio, click **Auth** above the server). On Copilot
+Business and Enterprise, an admin must turn on the **MCP servers in Copilot** policy.
+
 ## Microsoft Copilot
 
 **Copilot Studio:** Tools → Add a tool → **Model Context Protocol** → URL `https://api.joinfor.me/mcp`.
@@ -168,7 +193,7 @@ any time on your account page.
 | **Cursor** | [Install in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=joinforme&config=eyJ1cmwiOiJodHRwczovL2FwaS5qb2luZm9yLm1lL21jcCJ9), or `~/.cursor/mcp.json`: `{"mcpServers": {"joinforme": {"url": "https://api.joinfor.me/mcp"}}}` |
 | **VS Code** | `code --add-mcp '{"name":"joinforme","type":"http","url":"https://api.joinfor.me/mcp"}'`, or `.vscode/mcp.json`: `{"servers": {"joinforme": {"type": "http", "url": "https://api.joinfor.me/mcp"}}}` |
 | **Windsurf** | `~/.codeium/windsurf/mcp_config.json`: `{"mcpServers": {"joinforme": {"serverUrl": "https://api.joinfor.me/mcp"}}}` |
-| **Claude Code, Codex, Gemini CLI, Grok Build** | See the sections above. |
+| **Claude Code, Codex, Gemini CLI, Grok Build, GitHub Copilot** | See the sections above. |
 | **Anything else** | A remote MCP server at `https://api.joinfor.me/mcp` (Streamable HTTP), OAuth or a Bearer API key. |
 
 ## Kimi, Qwen and DeepSeek

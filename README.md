@@ -67,6 +67,7 @@ now or scheduled up to 30 days ahead.
 | **Grok** | grok.com/connectors → New Connector → Custom → the MCP URL | [Grok](docs/platforms.md#grok-and-xai) |
 | **Grok Bot** | Ask: "Add a custom server named joinforme with the URL https://api.joinfor.me/mcp" | [Grok Bot](docs/platforms.md#grok-and-xai) |
 | **Gemini CLI** | `gemini extensions install https://github.com/pattern-ai-labs/joinforme` | [Gemini](docs/platforms.md#google-gemini) |
+| **GitHub Copilot** | `copilot plugin install pattern-ai-labs/joinforme`, or the MCP URL in agent mode (VS Code, Visual Studio, JetBrains) | [GitHub Copilot](docs/platforms.md#github-copilot) |
 | **Microsoft Copilot Studio** | Add a tool → Model Context Protocol → the MCP URL | [Copilot](docs/platforms.md#microsoft-copilot) |
 | **Perplexity, Le Chat** | Add a custom remote connector with the MCP URL | [Perplexity](docs/platforms.md#perplexity) · [Le Chat](docs/platforms.md#mistral-le-chat) |
 | **OpenClaw, Hermes, Poke, Meta Muse, Instinct, Dots, Duet** | Skill + API key, or the MCP URL with a Bearer key | [Personal agents](docs/platforms.md#personal-agents) |
@@ -143,9 +144,9 @@ and a [fair usage policy](https://joinfor.me/fair-use) applies.
 | Path | For |
 |---|---|
 | [`skills/joinforme/SKILL.md`](skills/joinforme/SKILL.md) | The skill (Agent Skills format, with OpenClaw metadata) |
-| [`.claude-plugin/`](.claude-plugin/) | Claude Code plugin and marketplace (also read by Grok Build) |
+| [`.claude-plugin/`](.claude-plugin/) | Claude Code plugin and marketplace (also read by Grok Build and Copilot CLI) |
 | [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) | Codex / ChatGPT plugin manifest |
-| [`plugin.json`](plugin.json), [`mcp.json`](mcp.json) | [Agent Plugins](https://agent-plugins.org) manifest, the vendor-neutral standard |
+| [`plugin.json`](plugin.json), [`mcp.json`](mcp.json) | [Agent Plugins](https://agent-plugins.org) manifest, the vendor-neutral standard (read by Copilot CLI) |
 | [`.mcp.json`](.mcp.json) | Remote MCP server for Claude Code, Codex and Grok Build |
 | [`gemini-extension.json`](gemini-extension.json) | Gemini CLI extension |
 | [`server.json`](server.json) | MCP Registry entry |

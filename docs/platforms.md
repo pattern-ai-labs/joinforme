@@ -243,12 +243,36 @@ under Settings → Skills & Commands.
 
 **Doubao app 豆包**: no custom MCP servers or skills yet. Use Doubao Work or Coze.
 
+### Moonshot (Kimi)
+
+**Kimi Code CLI**, with an API key:
+
+```bash
+kimi mcp add --transport http joinforme https://api.joinfor.me/mcp \
+  --header "Authorization: Bearer $JOINFORME_API_KEY"
+```
+
+Or with OAuth sign-in:
+
+```bash
+kimi mcp add --transport http --auth oauth joinforme https://api.joinfor.me/mcp
+kimi mcp auth joinforme
+```
+
+The servers are stored in `~/.kimi/mcp.json`. For the skill, copy `skills/joinforme` to
+`~/.config/agents/skills/` (all agents) or `~/.kimi/skills/`, or to `.kimi/skills/` in a project.
+
+**Kimi Work** (desktop): create a personal plugin with **Plugin Builder** and import this repository. Kimi Work
+reads `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json` and `server.json`, so the MCP server and the
+skill come in together. The plugin then works in Kimi Work and on Kimi web.
+
+**Kimi web**: plugins come from the official market. joinfor.me isn't listed there yet, so use a plugin
+created in Kimi Work.
+
 ### Quick reference (other vendors)
 
 | Product | How |
 |---|---|
-| **Kimi Code CLI** | Add a remote HTTP MCP server named `joinforme` with URL `https://api.joinfor.me/mcp` (see Kimi Code's MCP settings). |
-| **Kimi (chat app)** | Kimi adds connectors through its plugin store. joinfor.me isn't listed there yet. |
 | **Qwen Code** | `~/.qwen/settings.json`: `{"mcpServers": {"joinforme": {"httpUrl": "https://api.joinfor.me/mcp"}}}` |
 | **Qwen Chat** | No custom MCP servers yet. |
 | **DeepSeek Harness** | Add `https://api.joinfor.me/mcp` through its MCP client plugin. |

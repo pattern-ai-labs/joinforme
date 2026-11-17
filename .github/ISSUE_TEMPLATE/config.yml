@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Account or billing questions
+    url: mailto:info@pattern-ai.com
+    about: Questions about your joinfor.me account
+  - name: Security report
+    url: mailto:info@pattern-ai.com
+    about: Please report security problems privately

@@ -18,7 +18,8 @@ documented the steps publicly yet, so we describe the general route.
 **Contents:**
 [Claude](#claude) · [ChatGPT and OpenAI](#chatgpt-and-openai) · [Grok and xAI](#grok-and-xai) ·
 [Google Gemini](#google-gemini) · [GitHub Copilot](#github-copilot) · [Microsoft Copilot](#microsoft-copilot) · [Perplexity](#perplexity) ·
-[Mistral Le Chat](#mistral-le-chat) · [Personal agents](#personal-agents) · [Developer tools](#developer-tools) ·
+[Mistral Le Chat](#mistral-le-chat) · [Personal agents](#personal-agents) ·
+[Agent builders and chat clients](#agent-builders-and-chat-clients) · [Developer tools](#developer-tools) ·
 [Chinese assistants and tools](#chinese-assistants-and-tools) · [Any other agent](#any-other-agent)
 
 ---
@@ -185,6 +186,16 @@ an organization, an admin may need to add it.
 
 Keep the API key in the agent's credential or secret settings, not in a chat message. You can revoke a key at
 any time on your account page.
+
+## Agent builders and chat clients
+
+| App | How |
+|---|---|
+| **Manus** | Settings → Integrations → Custom MCP Servers → **Add Server**: name `joinforme`, URL `https://api.joinfor.me/mcp`, authentication **Bearer token** = your API key. For the skill, upload `joinforme-skill.zip` under Skills and use it with `/joinforme`. |
+| **Dify** | Tools → MCP → add a server: URL `https://api.joinfor.me/mcp`, name `joinforme`. Dify registers itself and opens the joinfor.me sign-in (OAuth). Or add the header `Authorization: Bearer <JOINFORME_API_KEY>`. |
+| **Cherry Studio** | Settings → MCP → Add (or Import from JSON): type streamable HTTP, URL `https://api.joinfor.me/mcp`, header `Authorization: Bearer <JOINFORME_API_KEY>`. |
+| **LobeHub (LobeChat)** | Skill Store → Add: import the skill from GitHub (`pattern-ai-labs/joinforme`), and add a custom MCP server with URL `https://api.joinfor.me/mcp` and your API key. |
+| **ChatWise** | Tools → + → add a Streamable HTTP server `https://api.joinfor.me/mcp` with the header `Authorization: Bearer <JOINFORME_API_KEY>` (ChatWise doesn't support OAuth yet). |
 
 ## Developer tools
 

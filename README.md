@@ -72,7 +72,7 @@ now or scheduled up to 30 days ahead.
 | **Perplexity, Le Chat** | Add a custom remote connector with the MCP URL | [Perplexity](docs/platforms.md#perplexity) · [Le Chat](docs/platforms.md#mistral-le-chat) |
 | **OpenClaw, Hermes, Poke, Meta Muse, Instinct, Dots, Duet** | Skill + API key, or the MCP URL with a Bearer key | [Personal agents](docs/platforms.md#personal-agents) |
 | **Cursor, VS Code, Windsurf** | Add the remote MCP server | [Developer tools](docs/platforms.md#developer-tools) |
-| **Kimi, Qwen, DeepSeek** | Their developer tools (Kimi Code, Qwen Code, DeepSeek Harness) | [Kimi, Qwen, DeepSeek](docs/platforms.md#kimi-qwen-and-deepseek) |
+| **Chinese assistants** (Coze, Doubao Work, Trae, Kimi, Qwen, DeepSeek, GLM, Tencent, Baidu…) | Their work apps, agent platforms and coding tools, with the MCP URL and an API key | [Chinese assistants](docs/platforms.md#chinese-assistants-and-tools) |
 | **Any other agent** | "Read https://api.joinfor.me/skill.md" plus an API key | [Any other agent](docs/platforms.md#any-other-agent) |
 
 The full step-by-step guide for each one is in **[docs/platforms.md](docs/platforms.md)**.

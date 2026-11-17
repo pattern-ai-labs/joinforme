@@ -19,7 +19,7 @@ documented the steps publicly yet, so we describe the general route.
 [Claude](#claude) · [ChatGPT and OpenAI](#chatgpt-and-openai) · [Grok and xAI](#grok-and-xai) ·
 [Google Gemini](#google-gemini) · [GitHub Copilot](#github-copilot) · [Microsoft Copilot](#microsoft-copilot) · [Perplexity](#perplexity) ·
 [Mistral Le Chat](#mistral-le-chat) · [Personal agents](#personal-agents) · [Developer tools](#developer-tools) ·
-[Kimi, Qwen and DeepSeek](#kimi-qwen-and-deepseek) · [Any other agent](#any-other-agent)
+[Chinese assistants and tools](#chinese-assistants-and-tools) · [Any other agent](#any-other-agent)
 
 ---
 
@@ -196,7 +196,54 @@ any time on your account page.
 | **Claude Code, Codex, Gemini CLI, Grok Build, GitHub Copilot** | See the sections above. |
 | **Anything else** | A remote MCP server at `https://api.joinfor.me/mcp` (Streamable HTTP), OAuth or a Bearer API key. |
 
-## Kimi, Qwen and DeepSeek
+## Chinese assistants and tools
+
+What works today:
+
+- **Coding tools and desktop "work" apps** (Kimi Code, Qwen Code, Trae, CodeBuddy, DeepSeek Harness, Doubao Work,
+  QwenWork, Kimi Work and others) can add the remote MCP server. Most accept the API key in a header:
+  `Authorization: Bearer <JOINFORME_API_KEY>`. Some also support OAuth sign-in.
+- **Most also read Agent Skills** (`SKILL.md`): use [`skills/joinforme`](../skills/joinforme) or
+  [`joinforme-skill.zip`](distribution.md).
+- **Consumer chat apps** (the Doubao, Qwen, DeepSeek, GLM, Yuanbao and Wenxiaoyan apps) can't add custom MCP
+  servers yet. Use the vendor's desktop work app, agent platform or coding tool instead.
+
+Create the API key at https://app.joinfor.me/account → API keys.
+
+### ByteDance
+
+**Coze 扣子** (web and desktop): Extensions (扩展) → MCP → **添加自定义 MCP**, paste the JSON below, then
+**添加到我的 MCP** and attach it to your agent:
+
+```json
+{"mcpServers": {"joinforme": {"url": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer <JOINFORME_API_KEY>"}}}}
+```
+
+To share it across agents, create an **MCP plugin** instead: Resources (资源库) → + Resource → Plugin, type
+MCP, URL `https://api.joinfor.me/mcp`, auth **Service token / API key** in the header `Authorization` with the
+value `Bearer <JOINFORME_API_KEY>`.
+
+For the skill, upload [`joinforme-skill.zip`](distribution.md) under Skills (技能). It contains `SKILL.md`.
+
+**Doubao Work 豆包工作** (desktop): 插件·技能·伙伴 → 插件 → **+ 添加** → **新建自定义连接器**. Transport
+**HTTP**, URL `https://api.joinfor.me/mcp`, and under 自定义 Headers add `Authorization` =
+`Bearer <JOINFORME_API_KEY>`. For the skill: 技能 → + 添加 → 上传技能 → the `joinforme` folder or
+`joinforme-skill.zip`.
+
+**Trae**: Settings → MCP → Add → **Create Manually**, or the project file `.trae/mcp.json`:
+
+```json
+{"mcpServers": {"joinforme": {"url": "https://api.joinfor.me/mcp",
+  "headers": {"Authorization": "Bearer <JOINFORME_API_KEY>"}}}}
+```
+
+Skills: copy `skills/joinforme` to `.trae/skills/` (project) or `~/.trae/skills/` (everywhere), or upload it
+under Settings → Skills & Commands.
+
+**Doubao app 豆包**: no custom MCP servers or skills yet. Use Doubao Work or Coze.
+
+### Quick reference (other vendors)
 
 | Product | How |
 |---|---|

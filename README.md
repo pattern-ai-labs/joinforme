@@ -77,6 +77,10 @@ now or scheduled up to 30 days ahead.
 
 The full step-by-step guide for each one is in **[docs/platforms.md](docs/platforms.md)**.
 
+**Ready-made packages:** every release has `joinforme-skill.zip` (skill uploads) and `joinforme-plugin.zip`
+(plugin portals), and the skill installs into any Agent Skills host with `npx skills add pattern-ai-labs/joinforme`.
+See [docs/distribution.md](docs/distribution.md) for which package goes where.
+
 ## Two ways in, same tools
 
 **Remote MCP**: `https://api.joinfor.me/mcp` (Streamable HTTP). Sign-in uses OAuth 2.1 with PKCE, dynamic
@@ -151,6 +155,8 @@ and a [fair usage policy](https://joinfor.me/fair-use) applies.
 | [`gemini-extension.json`](gemini-extension.json) | Gemini CLI extension |
 | [`server.json`](server.json) | MCP Registry entry |
 | [`docs/platforms.md`](docs/platforms.md) | Setup for each assistant |
+| [`docs/distribution.md`](docs/distribution.md) | Packages and where each one goes |
+| [`scripts/`](scripts/) | `validate.py` (CI checks) and `package.py` (release ZIPs) |
 | [`assets/`](assets/) | Logo |
 
 No manifest contains a key or secret: every assistant signs in with OAuth or asks you for your own API key.

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "joinforme": {
+      "type": "http",
+      "url": "https://api.joinfor.me/mcp"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "joinforme",
+  "description": "joinfor.me: send a bot into your meetings from your agent",
+  "owner": {
+    "name": "Pattern AI Labs",
+    "email": "info@pattern-ai.com"
+  },
+  "plugins": [
+    {
+      "name": "joinforme",
+      "source": "./",
+      "description": "Send a bot into your Google Meet, Zoom or Microsoft Teams call to take notes, go instead of you, or sit in with you, and get the transcript back in your chat.",
+      "category": "productivity",
+      "homepage": "https://joinfor.me",
+      "keywords": [
+        "meetings",
+        "meeting-bot",
+        "google-meet",
+        "zoom",
+        "microsoft-teams",
+        "meeting-notes",
+        "transcription",
+        "mcp"
+      ]
+    }
+  ]
+}

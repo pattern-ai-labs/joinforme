@@ -1,0 +1,29 @@
+{
+  "name": "joinforme",
+  "displayName": "joinfor.me",
+  "version": "1.0.0",
+  "description": "Send a bot into your Google Meet, Zoom or Microsoft Teams call to take notes, go instead of you, or sit in with you, and get the transcript back in your chat.",
+  "author": {
+    "name": "Pattern AI Labs",
+    "email": "info@pattern-ai.com",
+    "url": "https://joinfor.me"
+  },
+  "homepage": "https://joinfor.me",
+  "repository": "https://github.com/pattern-ai-labs/joinforme",
+  "license": "MIT",
+  "keywords": [
+    "meetings",
+    "meeting-bot",
+    "google-meet",
+    "zoom",
+    "microsoft-teams",
+    "meeting-notes",
+    "transcription",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/pattern-ai-labs/joinforme#readme",
+  "supportUrl": "mailto:info@pattern-ai.com",
+  "privacyPolicyUrl": "https://joinfor.me/privacy",
+  "termsOfServiceUrl": "https://joinfor.me/terms"
+}

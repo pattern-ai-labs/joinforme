@@ -10,5 +10,9 @@
       "type": "streamable-http",
       "url": "https://api.joinfor.me/mcp"
     }
-  ]
+  ],
+  "repository": {
+    "url": "https://github.com/pattern-ai-labs/joinforme",
+    "source": "github"
+  }
 }

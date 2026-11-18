@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.5.0 — 2026-11-18
 
 - `update_meeting send_now: true` sends a scheduled bot into its meeting now.
 - `with_me`: an `update_text` is given only if someone asks for it.

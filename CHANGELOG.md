@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — 2026-11-18
+
+- Skill: `update_defaults` takes `time_zone` (e.g. `Asia/Kolkata`); joinfor.me shows meeting times in the user's
+  zone and learns it from `start_at` offsets if not set. `list_meetings` lists upcoming bots soonest first and
+  returns `start_local`.
+- Skill: new `bot_chat` event (the bot's own chat posts); transcript lines are in time order, chat posts marked
+  `"chat": true`.
+
 ## 1.1.1 — 2026-11-18
 
 - `server.json`: icon for the MCP Registry and the directories that read it.

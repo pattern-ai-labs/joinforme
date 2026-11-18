@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-11-18
+
+- `server.json`: icon for the MCP Registry and the directories that read it.
+- `server.json`: description shortened to the registry's 100-character limit; CI checks it.
+- `glama.json` to claim the Glama listing; 400×400 logo for directory submissions.
+
 ## 1.1.0 — 2026-11-18
 
 - Setup for **GitHub Copilot**: Copilot CLI plugin install, and agent mode in VS Code, Visual Studio and JetBrains.

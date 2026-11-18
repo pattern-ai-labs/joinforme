@@ -1,6 +1,6 @@
 {
   "name": "joinforme",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Send a bot into your Google Meet, Zoom or Microsoft Teams call to take notes, go instead of you, or sit in with you, and get the transcript back in your chat.",
   "author": {
     "name": "Pattern AI Labs",

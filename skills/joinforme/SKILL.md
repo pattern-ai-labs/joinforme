@@ -78,8 +78,9 @@ token (or OAuth sign-in). The tools are the same.
 | `delete_meeting` | `meeting_id` | Delete a finished meeting and its transcript |
 
 Meeting statuses: `scheduled → sending → joining → waiting_room → in_call → ended` (or `failed`,
-`cancelled`). Event types: `status`, `joined`, `left`, `said`, `bot_said`, `chat`, `passed_on`,
-`answered`, `note`.
+`cancelled`). Event types: `status`, `joined`, `left`, `said`, `bot_said`, `bot_chat` (the bot posted in the meeting chat),
+`chat`, `passed_on`, `answered`, `note`. Transcript lines are in time order; chat posts by the bot have
+`"chat": true`.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.4.0 — 2026-11-18
 
 - Calendar rules can **skip** as well as join, and limit by the number of people on the invite (`action`,
   `min_people`, `max_people`), e.g. "skip 1:1s"; `position` sets the order (first match wins).

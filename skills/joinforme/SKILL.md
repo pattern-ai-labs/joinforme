@@ -45,7 +45,9 @@ token (or OAuth sign-in). The tools are the same.
 - `for_me`: ask for the update and anything the bot may or may not say. By default it gives the
   update when the first person joins.
 - Times are ISO 8601 with the user's time zone offset, e.g. `2026-11-20T15:00:00+05:30`. Omit
-  `start_at` to send the bot now.
+  `start_at` to send the bot now. If you know the user's time zone, save it once with
+  `update_defaults` (`time_zone`, e.g. `Asia/Kolkata`) so their joinfor.me pages show local times;
+  otherwise joinfor.me learns the offset from your `start_at`.
 - Scheduling: give `start_at` (up to 30 days ahead) and the bot joins on time by itself. To cancel a
   scheduled bot call `stop_bot`; `list_meetings` with `filter: "upcoming"` lists them. To move one, cancel it
   and send a new one.
@@ -63,9 +65,9 @@ token (or OAuth sign-in). The tools are the same.
 | Tool | Arguments | What it does |
 |---|---|---|
 | `get_account` | `{}` | Account, defaults, hours used, live meetings |
-| `update_defaults` | `bot_name?, languages?, default_mode?, intro_line?, passed_on_reply?` | Change defaults |
+| `update_defaults` | `bot_name?, languages?, default_mode?, intro_line?, passed_on_reply?, time_zone?` | Change defaults (time zone, e.g. `Asia/Kolkata`) |
 | `send_bot` | `meeting_url, mode?, start_at?, bot_name?, languages?, brief?, update_text?, update_when?, update_people?, intro_line?, passed_on_reply?` | Send a bot now or later; returns `meeting_id` |
-| `list_meetings` | `filter?: upcoming/live/past, limit?` | The user's meetings |
+| `list_meetings` | `filter?: upcoming/live/past, limit?` | The user's meetings (upcoming soonest first; `start_local` in their time zone) |
 | `get_meeting` | `meeting_id` | Status, who is there now, open passed-on questions |
 | `get_events` | `meeting_id, since?, limit?` | Events log; pass the returned `next` as `since` next time |
 | `wait_for_events` | `meeting_id, since, timeout_s? (≤25)` | Returns as soon as there is something new |

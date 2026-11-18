@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Bots join with a video avatar: `avatar` (`jellyfish`, `orb`, `ring`, `initials`, `picture`) on `update_defaults`,
+  `send_bot` and `update_meeting`.
+
 ## 1.5.0 — 2026-11-18
 
 - `update_meeting send_now: true` sends a scheduled bot into its meeting now.

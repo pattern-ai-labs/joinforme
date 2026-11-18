@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- `update_meeting send_now: true` sends a scheduled bot into its meeting now.
+- `with_me`: an `update_text` is given only if someone asks for it.
+
 ## 1.4.0 — 2026-11-18
 
 - Calendar rules can **skip** as well as join, and limit by the number of people on the invite (`action`,

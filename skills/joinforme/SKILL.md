@@ -41,7 +41,8 @@ token (or OAuth sign-in). The tools are the same.
   - `notes` — joins silently and transcribes.
   - `for_me` — goes instead of the user, gives their update, answers only from the brief, passes on
     anything else.
-  - `with_me` — the user is in the call too; the bot stays quiet unless called by name.
+  - `with_me` — the user is in the call too; the bot stays quiet unless called by name. An
+    `update_text` is given only if someone asks for it.
 - `for_me`: ask for the update and anything the bot may or may not say. By default it gives the
   update when the first person joins.
 - Times are ISO 8601 with the user's time zone offset, e.g. `2026-11-20T15:00:00+05:30`. Omit
@@ -83,7 +84,7 @@ token (or OAuth sign-in). The tools are the same.
 | `say` | `meeting_id, text` | The bot says this now (for_me / with_me, live) |
 | `answer` | `meeting_id, request_id, text` | Answer a question the bot passed on |
 | `send_chat` | `meeting_id, text` | Post in the meeting chat (live) |
-| `update_meeting` | `meeting_id` or `event_id`, `skip?, mode?, brief?, update_text?, update_when?, update_people?, bot_name?, languages?, intro_line?, passed_on_reply?` | Change or skip a bot before it joins; `event_id` sends one to a calendar meeting |
+| `update_meeting` | `meeting_id` or `event_id`, `skip?, send_now?, mode?, brief?, update_text?, update_when?, update_people?, bot_name?, languages?, intro_line?, passed_on_reply?` | Change or skip a bot before it joins, or send it now; `event_id` sends one to a calendar meeting |
 | `get_calendar` | `refresh?` | Calendar connected?, auto-join rules, next 7 days and which meetings get a bot |
 | `save_calendar_rule` | `rule_id?, action?: join/skip, match?: all/title, words?, min_people?, max_people?, mode?, brief?, enabled?, position?` | Create or change an auto-join rule (first match wins) |
 | `delete_calendar_rule` | `rule_id` | Delete a rule |

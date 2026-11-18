@@ -65,6 +65,8 @@ for name, cfg in servers:
         err(f"MCP server {name}: url should be {MCP_URL}, got {url!r}")
     if cfg.get("headers"):
         err(f"MCP server {name}: manifests must not carry headers")
+if len((docs.get("server.json") or {}).get("description", "")) > 100:
+    err("server.json: description must be at most 100 characters (MCP Registry limit)")
 for r in (docs.get("server.json") or {}).get("remotes", []):
     if r.get("url") != MCP_URL:
         err(f"server.json: remote url should be {MCP_URL}")

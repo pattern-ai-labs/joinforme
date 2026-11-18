@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Calendar rules can **skip** as well as join, and limit by the number of people on the invite (`action`,
+  `min_people`, `max_people`), e.g. "skip 1:1s"; `position` sets the order (first match wins).
+- `get_calendar refresh: true` reads the calendar again first, for a meeting just added.
+
 ## 1.3.0 — 2026-11-18
 
 - **Calendar auto-join:** connect Google Calendar (read-only) and joinfor.me sends bots by itself to the meetings

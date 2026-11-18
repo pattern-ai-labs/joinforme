@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.3.0 — 2026-11-18
 
 - **Calendar auto-join:** connect Google Calendar (read-only) and joinfor.me sends bots by itself to the meetings
   your rules pick. New tools `get_calendar`, `save_calendar_rule`, `delete_calendar_rule`.

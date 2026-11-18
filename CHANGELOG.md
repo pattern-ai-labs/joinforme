@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- **Calendar auto-join:** connect Google Calendar (read-only) and joinfor.me sends bots by itself to the meetings
+  your rules pick. New tools `get_calendar`, `save_calendar_rule`, `delete_calendar_rule`.
+- New tool `update_meeting`: change a scheduled bot (mode, brief, the update) or skip it before it joins.
+- `get_account` shows the calendar status; `list_meetings` shows each bot's `source` and calendar title.
+
 ## 1.2.0 — 2026-11-18
 
 - Skill: `update_defaults` takes `time_zone` (e.g. `Asia/Kolkata`); joinfor.me shows meeting times in the user's

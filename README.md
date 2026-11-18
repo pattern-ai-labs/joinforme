@@ -43,7 +43,12 @@ manifests** for the main platforms, and **setup guides**. The service itself run
 
 While the meeting runs, your assistant can check what's happening, update the brief, have the bot say
 something, answer a question the bot passed on, post in the meeting chat, or make it leave. Bots can be sent
-now or scheduled up to 30 days ahead.
+now or scheduled up to 30 days ahead, and changed or skipped before they join.
+
+**Calendar auto-join.** Connect Google Calendar at https://app.joinfor.me/account (read-only) and set rules such
+as "notes in every meeting with a link" or "go for me to anything called standup". joinfor.me then sends the bot
+by itself, follows moved and cancelled meetings, and skips ones you declined. Your assistant can see and change
+the rules, and skip or add a single meeting.
 
 ## Quick start
 
@@ -55,6 +60,7 @@ now or scheduled up to 30 days ahead.
    - "I can't make standup. Go for me: the API is done and I'm on billing today. Don't commit me to dates."
    - "Sit in on my client call with me and answer pricing questions from this brief."
    - "How did the meeting go? Any action items for me?"
+   - "Take notes in all my standups." (with Google Calendar connected)
 
 ## Connect your assistant
 

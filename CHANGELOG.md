@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.7.0 — 2026-11-19
 
 - Languages: the skill tells agents to set `languages` on `send_bot` whenever the meeting's language is known
   (first = the bot's main language, at most 5); `save_calendar_rule` takes optional `languages` per rule.

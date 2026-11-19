@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Languages: the skill tells agents to set `languages` on `send_bot` whenever the meeting's language is known
+  (first = the bot's main language, at most 5); `save_calendar_rule` takes optional `languages` per rule.
+
 ## 1.6.0 — 2026-11-18
 
 - Bots join with a video avatar: `avatar` (`jellyfish`, `orb`, `ring`, `initials`, `picture`) on `update_defaults`,
